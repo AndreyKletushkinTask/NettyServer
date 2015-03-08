@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Netty test</title>
+<script type="text/javascript">
+
+	function load(url,callback) {
+		xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange=function () { 
+			callback(xmlhttp.responseText)
+		}
+		xmlhttp.open("GET", url,false);
+		xmlhttp.send(null);
+	}
+	window.onload = function() {
+		load("getRequestNumbers",function(response) {
+			document.getElementById("wholeNumbers").innerHTML ="Whole numbers of requests:"+ response
+		});
+		load("getUniqCount",function(response) {
+			document.getElementById("uniqNumbers").innerHTML ="Uniq numbers of requests:"+ response
+		});
+		load("getIPStatistic",function(response) {
+			document.getElementById("table1").innerHTML ="Requests per ip adress\n"+ response
+		});
+		load("getUrlStatistic",function(response) {
+			document.getElementById("table2").innerHTML ="Numbers of redirects\n"+ response
+		});
+		load("getConnectionsCount",function(response) {
+			document.getElementById("table3").innerHTML ="Numbers of connections:\n"+ response
+		});
+		load("showLog",function(response) {
+			document.getElementById("table4").innerHTML ="Numbers of connections:\n"+ response
+		});
+	
+		
+	
+	}
+
+	
+</script>
+
+</head>
+<body>
+	<div id="wholeNumbers">
+	</div>
+	<div id="uniqNumbers">
+	</div>
+	<div id = "table1">
+	
+	</div>
+	<div id = "table2">
+	
+	</div>
+	<div id = "table3">
+	
+	</div>
+	<div id = "table4">
+	
+	</div>
+	
+</body>
+
+</html>
